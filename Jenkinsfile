@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t sivaskadock/devops-integration .'
+                    sh 'docker build -t sivaskadock/spring-deploy-k8 .'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u sivaskadock -p ${dockerhubpwd}'
 
                 }
-                   sh 'docker push sivaskadock/devops-integration'
+                   sh 'docker push sivaskadock/spring-deploy-k8'
                 }
             }
         }
